@@ -3,7 +3,8 @@ local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 
 local games = {
     [142823291] = "https://projectlambda.3b1m.org/mm2.lua",
-    [98629859043211, 99078474560152] = "https://projectlambda.3b1m.org/meg.lua"
+    [98629859043211] = "https://projectlambda.3b1m.org/meg.lua",
+    [99078474560152] = "https://projectlambda.3b1m.org/meg.lua"
 }
 
 local function loadGameScript()
