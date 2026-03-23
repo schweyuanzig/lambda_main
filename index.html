@@ -1,1 +1,263 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAMBDA</title>
+    <meta
+      name="description"
+      content="Lambda is a dynamic script hub offering a polished interface, fast loader access, supported utilities, feature overviews, and direct links on projectlambda.net."
+    />
+    <meta
+      name="keywords"
+      content="Lambda, projectlambda, script hub, loader, supported utilities, gaming tools, feature overview"
+    />
+    <meta name="author" content="Lambda" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://projectlambda.net/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lambda | Dynamic Script Hub" />
+    <meta
+      property="og:description"
+      content="Explore Lambda, a dynamic script hub with a polished interface, loader access, supported utilities, and feature panels."
+    />
+    <meta property="og:url" content="https://projectlambda.net/" />
+    <meta property="og:site_name" content="Lambda" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lambda | Dynamic Script Hub" />
+    <meta
+      name="twitter:description"
+      content="Explore Lambda, a dynamic script hub with loader access, supported utilities, and feature panels."
+    />
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div class="background-layer" aria-hidden="true">
+      <div class="dots"></div>
+      <div class="noise"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="brand-bar">
+        <a class="brand-link" href="https://projectlambda.net/" aria-label="Lambda homepage">
+          <span class="brand-mark" aria-hidden="true">λ</span>
+          <span class="brand-text">
+            <span class="brand-title">Lambda</span>
+            <span class="brand-subtitle">STABLE</span>
+          </span>
+        </a>
+
+        <nav class="top-nav" aria-label="Primary">
+          <a href="#hero">Home</a>
+          <a href="#quick-actions">Actions</a>
+          <a href="#performance">Performance</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <div class="container">
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+          <header class="hero-copy">
+            <div class="title-row">
+              <div class="title-wrap">
+                <p class="eyebrow">ALPHA VERSION</p>
+                <h1 class="title" id="hero-title"><img src="./storage/L_Text.png" alt="Lambda Text" width="%50" height="150px"></h1>
+                <p class="subtitle">
+                  projectlambda.net, simply known as Lambda, is a dynamic script hub built to elevate
+                  your in-game experience.
+                </p>
+              </div>
+            </div>
+          </header>
+
+          <nav class="button-row" id="quick-actions" aria-label="Quick actions">
+            <button class="cta blue" id="loaderButton" type="button" aria-controls="loaderModal" aria-haspopup="dialog">
+              <span class="cta-inner">Loader</span>
+            </button>
+            <button class="cta purple" id="featuresButton" type="button" aria-controls="featuresModal" aria-haspopup="dialog">
+              <span class="cta-inner">Features</span>
+            </button>
+            <button class="cta cyan" id="utilitiesButton" type="button" aria-controls="utilitiesModal" aria-haspopup="dialog">
+              <span class="cta-inner">Utilities</span>
+            </button>
+            <button class="cta pink" id="linksButton" type="button" aria-controls="linksModal" aria-haspopup="dialog">
+              <span class="cta-inner">Links</span>
+            </button>
+          </nav>
+
+          <section class="stats-section" id="performance" aria-labelledby="performance-title">
+            <h2 class="sr-only" id="performance-title">Performance overview</h2>
+            <div class="stats-row">
+              <a class="stat-link" href="https://projectlambda.online" target="_blank" rel="noreferrer">
+                <article class="stat-card">
+                  <h3 class="stat-title">Runtime</h3>
+                  <div class="stat-value">Stable</div>
+                </article>
+              </a>
+              <article class="stat-card">
+                <h3 class="stat-title">Version</h3>
+                <div class="stat-value">a2.9</div>
+              </article>
+              <article class="stat-card">
+                <h3 class="stat-title">Modules</h3>
+                <div class="stat-value">On Features</div>
+              </article>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-note">&copy; projectlambda.net | Developed by 1994 and cryptan</p>
+      <p class="footer-note">Site developed by 1994</p>
+    </footer>
+
+    <aside class="modal-overlay" id="loaderModal" aria-hidden="true">
+      <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="loader-modal-title">
+        <header class="modal-header">
+          <h2 class="modal-title" id="loader-modal-title">Loader</h2>
+          <button class="modal-close" type="button" data-close="loaderModal" aria-label="Close loader window">✕</button>
+        </header>
+        <div class="modal-body">
+          <p class="panel-label">Code</p>
+          <pre class="code-display"><code id="loaderCode">loadstring(game:HttpGet("https://projectlambda.net/LambdaLoader.lua"))()</code></pre>
+          <div class="panel-meta">
+            <p class="helper-text" id="loaderStatus">Open the loader window to instantly copy the script.</p>
+            <button class="copy-btn" id="copyLoaderButton" type="button">Copy</button>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <aside class="modal-overlay" id="featuresModal" aria-hidden="true">
+      <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="features-modal-title">
+        <header class="modal-header">
+          <h2 class="modal-title" id="features-modal-title">Features</h2>
+          <button class="modal-close" type="button" data-close="featuresModal" aria-label="Close features window">✕</button>
+        </header>
+        <div class="modal-body">
+          <p class="panel-label">Tab Pages</p>
+          <div class="feature-layout">
+            <nav class="tabs" aria-label="Feature tabs">
+              <button class="tab-btn active" type="button" data-tab="arsenal">Arsenal</button>
+              <button class="tab-btn" type="button" data-tab="meg">M.E.G</button>
+            </nav>
+            <div class="feature-panels">
+              <article class="tab-panel active" id="tab-arsenal">
+                <section class="feature-card">
+                  <h3 class="feature-title">Arsenal</h3>
+                  <p class="feature-text">Lambda's Arsenal module highlights its most popular combat-oriented utilities.</p>
+                  <ul class="feature-list">
+                    <li>OP Aimbot</li>
+                    <li>Team Check</li>
+                    <li>No Recoil &amp; No Spread</li>
+                    <li>ESP</li>
+                    <li>Tracers</li>
+                    <li>Streamproof</li>
+                    <li>More Customizable Visuals</li>
+                    <li>And more...</li>
+                  </ul>
+                </section>
+              </article>
+              <article class="tab-panel" id="tab-meg">
+                <section class="feature-card">
+                  <h3 class="feature-title">M.E.G</h3>
+                  <p class="feature-text">Lambda's M.E.G module focuses on survival, exploration, and utility-based tools.</p>
+                  <ul class="feature-list">
+                    <li>Entity Notifier</li>
+                    <li>Chat Enabler</li>
+                    <li>Anti-AFK</li>
+                    <li>Teleport Hacks</li>
+                    <li>Unlock Gamepasses</li>
+                    <li>ESP</li>
+                    <li>Noclip</li>
+                    <li>Break Zoom</li>
+                    <li>Movement Hacks</li>
+                    <li>And more...</li>
+                  </ul>
+                </section>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <aside class="modal-overlay" id="utilitiesModal" aria-hidden="true">
+      <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="utilities-modal-title">
+        <header class="modal-header">
+          <h2 class="modal-title" id="utilities-modal-title">Utilities</h2>
+          <button class="modal-close" type="button" data-close="utilitiesModal" aria-label="Close supported utilities window">✕</button>
+        </header>
+        <div class="modal-body">
+          <p class="panel-label">Labels</p>
+          <nav class="utility-grid" aria-label="Supported utilities list">
+            <a class="link-card" href="https://potassium.pro" target="_blank" rel="noreferrer">
+              <div class="label-logo" aria-hidden="true">P</div>
+              <div class="label-copy">
+                <h3 class="label-title">Potassium</h3>
+                <p class="label-desc">%100 sUNC</p>
+              </div>
+            </a>
+            <a class="link-card" href="https://cosmic.best" target="_blank" rel="noreferrer">
+              <div class="label-logo" aria-hidden="true">C</div>
+              <div class="label-copy">
+                <h3 class="label-title">Cosmic</h3>
+                <p class="label-desc">%100 sUNC</p>
+              </div>
+            </a>
+            <a class="link-card" href="https://getisaeva.xyz" target="_blank" rel="noreferrer">
+              <div class="label-logo" aria-hidden="true">I</div>
+              <div class="label-copy">
+                <h3 class="label-title">Isaeva</h3>
+                <p class="label-desc">%100 sUNC</p>
+              </div>
+            </a>
+            <a class="link-card" href="https://getwave.gg" target="_blank" rel="noreferrer">
+              <div class="label-logo" aria-hidden="true">W</div>
+              <div class="label-copy">
+                <h3 class="label-title">Wave</h3>
+                <p class="label-desc">%100 sUNC</p>
+              </div>
+            </a>
+            <a class="link-card" href="https://volt.bz" target="_blank" rel="noreferrer">
+              <div class="label-logo" aria-hidden="true">V</div>
+              <div class="label-copy">
+                <h3 class="label-title">Volt</h3>
+                <p class="label-desc">%98 sUNC</p>
+              </div>
+            </a>
+          </nav>
+        </div>
+      </section>
+    </aside>
+
+    <aside class="modal-overlay" id="linksModal" aria-hidden="true">
+      <section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="links-modal-title">
+        <header class="modal-header">
+          <h2 class="modal-title" id="links-modal-title">Links</h2>
+          <button class="modal-close" type="button" data-close="linksModal" aria-label="Close links window">✕</button>
+        </header>
+        <div class="modal-body">
+          <p class="panel-label">Links</p>
+          <nav class="label-grid" aria-label="External links">
+            <a class="link-card" href="https://discord.gg/4VCtgWFhfV" target="_blank" rel="noreferrer">
+              <div class="label-logo" aria-hidden="true">D</div>
+              <div class="label-copy">
+                <h3 class="label-title">Discord</h3>
+                <p class="label-desc">Join the Lambda community!</p>
+              </div>
+            </a>
+            </a>
+          </nav>
+        </div>
+      </section>
+    </aside>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
