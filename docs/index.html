@@ -1,0 +1,156 @@
+<!-- Lambda Addons | April 7, 2026 -->
+<!-- <3 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LAMBDA | Addons</title>
+        <link rel="stylesheet" href="./index.css" type="text/css">
+    </head>
+    <body>
+        <div id="container">
+            <section class="contentwrapper">
+                <article>
+                    <h1>1. Setup Your File</h1>
+                    <p>All addons must be placed in the following directory on your computer:<br><code>ProjectLambda/Addons/YourAddon.lua</code></p>
+                    
+                    <hr>
+                    
+                    <h1>2. Define the Metadata</h1>
+                    <p>Every addon starts with a table containing its identity. Without these 4 fields, the addon will not load:</p>
+                    <blockquote>
+                        <strong>name:</strong> The title shown in the menu.<br>
+                        <strong>version:</strong> Your script version.<br>
+                        <strong>id:</strong> A unique name for the system (no spaces).<br>
+                        <strong>box:</strong> Choose "left" or "right" to decide which column the UI appears in.
+                    </blockquote>
+                    
+                    <hr>
+                    
+                    <h1>3. The Load Function</h1>
+                    <p>The Addons.Load function is where you build your UI. It provides four important tools:</p>
+                    <blockquote>
+                        <strong>groupbox:</strong> Used to add UI elements (buttons, toggles, etc.).<br>
+                        <strong>Library:</strong> Used for system functions like notifications.<br>
+                        <strong>Toggles:</strong> A list to check the state of your On/Off switches.<br>
+                        <strong>Options:</strong> A list to get values from sliders, dropdowns, and inputs.
+                    </blockquote>
+                    
+                    <h2>Example:</h2>
+                    <div class="code_lua">
+<pre><code>local Addons = {}
+
+Addons.name = "..."
+Addons.version = "..."
+Addons.id = "..."
+Addons.box = "..."
+
+function Addons.Load(groupbox, Library, Toggles, Options)
+    -- YOUR CODE
+end</code></pre>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h1>5. Key Reminders</h1>
+                    <blockquote>
+                        <strong>Saving:</strong> Always save your file as .lua or .luau<br>
+                        <strong>Unique IDs:</strong> Ensure your Addon.id and the IDs inside AddToggle or AddSlider are unique to avoid conflicts.<br>
+                        <strong>Case Sensitivity:</strong> Lua is case-sensitive. Toggles is different from toggles.
+                    </blockquote>
+                </article>
+                
+                <hr>
+                
+                <article>
+                    <h1>FULL EXAMPLE:</h1>
+<pre><code>local Addons = {}
+
+-- 1. MANDATORY METADATA FIELDS
+Addons.name    = "Example Addon"      -- Title displayed in the Addons tab
+Addons.version = "1.1.0"              -- Current version of the addon
+Addons.id      = "ExampleAddon"       -- Unique identifier for the system
+Addons.box     = "left"               -- Column position: "left" or "right"
+
+-- 2. LOAD FUNCTION
+function Addons.Load(groupbox, Library, Toggles, Options)
+    
+    groupbox:AddLabel("This is an information label.")
+
+    groupbox:AddToggle("Example_Toggle", {
+        Text    = "Enable Feature",
+        Default = false,
+        Callback = function(Value)
+            print("Toggle changed to:", Value)
+        end
+    })
+
+    groupbox:AddLabel("Accent Color"):AddColorPicker("Example_Color", {
+        Default = Color3.fromRGB(124, 106, 247),
+        Title   = "Choose Color",
+        Callback = function(Value)
+            print("Selected Color:", Value)
+        end
+    })
+
+    groupbox:AddSlider("Example_Slider", {
+        Text     = "Walk Speed",
+        Default  = 16,
+        Min      = 16,
+        Max      = 100,
+        Rounding = 0,
+        Callback = function(Value)
+            print("Slider value:", Value)
+        end
+    })
+
+    groupbox:AddDropdown("Example_Dropdown", {
+        Text     = "Mode Selection",
+        Values   = { "Aggressive", "Defensive", "Passive" },
+        Default  = 1,
+        Multi    = false,
+        Callback = function(Value)
+            print("Selected Mode:", Value)
+        end
+    })
+
+    groupbox:AddInput("Example_Input", {
+        Text        = "Custom Name",
+        Default     = "",
+        Placeholder = "Type here...",
+        Callback    = function(Value)
+            print("User entered:", Value)
+        end
+    })
+
+    groupbox:AddDivider()
+
+    groupbox:AddButton({
+        Text = "Test Notification",
+        Func = function()
+            Library:Notify("Master Addon loaded successfully!")
+        end
+    })
+
+    task.spawn(function()
+        while task.wait(5) do
+            if Toggles["Example_Toggle"] and Toggles["Example_Toggle"].Value then
+                local currentSlider = Options["Example_Slider"].Value
+                print("System is ACTIVE. Current Slider Value:", currentSlider)
+            end
+        end
+    end)
+end
+
+-- 3. MANDATORY RETURN
+return Addons</code></pre>
+                </article>
+            </section>
+            <footer>
+                <h2>by 1994 & cryptan</h2>
+                <p>&copy; 2026 | Lambda Utilities</p>
+            </footer>
+        </div>
+    </body>
+</html>
